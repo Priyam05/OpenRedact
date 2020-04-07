@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>openRedact</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='static/main.css'>
+  </head>
+  <body>
+    <div class="container head-space">
+      <div style="text-align: center; margin-bottom: 30px">
+          <h1>openRedact <small>Automatic text redaction, powered by ML</small></h1>
+      </div>
+      <div class="col-md-7 redaction-space">
+        <div class="row">
+          <div id="target">
+            <p class="paragraph"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 controls">
+        <div class="row">
+          <div class="col-md-12 center">
+            <span id="run-mode" class="pointer"></span>
+          </div>
+        </div>
+        <div class="row ui-annotate" style="display:None;">
+          <div class="col-md-12">
+            <h3>Documents</h3>
+            <ul id="document-list"></ul>
+          </div>
+        </div>
+        <div class="row ui-annotate" style="display:None;">
+          <div class="col-md-12 center">
+            <span id="page-number" class="pointer"></span>
+          </div>
+        </div>
+        <div class="row ui-annotate" style="display:None;">
+          <div class="col-md-12">
+            <h3>Annotations</h3>
+            <ul id="annotation-list"></ul>
+            <button class="btn btn-primary" id="save-btn" onClick="saveAnnotation()">Save Annotation</button>
+          </div>
+        </div>
+        <div class="row ui-annotate" style="display:None;">
+          <div class="col-md-12">
+            <h3>Add a new document:</h3>
+            <textarea id="document-upload" rows="7" style="width: 100%"></textarea>
+            <button class="btn btn-primary" onClick="uploadDocument()">Add Document</button>
+          </div>
+        </div>
+         <div class="row ui-redact" style="display:None;">
+          <div class="col-md-12">
+            <h3>Redaction Models:</h3>
+            <ul id="redaction-models"></ul>
+          </div>
+        </div>
+        <div class="row ui-redact" style="display:None;">
+          <div class="col-md-12">
+            <h3>Train a new model:</h3>
+            <label for="model-name">Model Name:&nbsp;</label><input type="text" id="model-name" style="width:73%">
+            <button class="btn btn-primary" onclick="trainModel()">Train</button>
+          </div>
+        </div>
+        <div class="row ui-redact" style="display:None;">
+          <div class="col-md-12">
+            <h3>Text to redact:</h3>
+            <textarea id="redact-textarea" rows="7" style="width: 100%">Sabino Acquaviva (29 April 1927 – 29 December 2015) was an Italian sociologist. He was president and director of University of Padua between 1977 and 1988. Acquaviva died on 29 December 2015 in his hometown of Padua, Italy.</textarea>
+            <button class="btn btn-primary" id="redact-btn" onClick="redactText()">Redact Text</button>
+          </div>
+        </div>
+        <div class="row ui-redact redaction-level-container" style="display:None;">
+          <div class="col-md-12 center">
+            <h3>Redaction level:</h3>
+            <span id="redaction-level" class="pointer"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://underscorejs.org/underscore-min.js"></script>
+    <script src="static/js/underscore.string.min.js"></script>
+    <script src="https://backbonejs.org/backbone-min.js"></script>
+    <script src="static/js/backbone-relational.js"></script>
+    <script src="static/js/backbone.marionette.min.js"></script>
+
+    <script src="static/js/ypet.js"></script>
+    <script src="static/js/demo.js"></script>
+  </body>
+</html>
