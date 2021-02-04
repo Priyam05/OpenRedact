@@ -18,3 +18,6 @@ It can be used to redact example texts, and then train a classifier on this data
 The output of this classifier can then interactively be tested on new texts
 ### Demo: https://openredact.jakobkoehler.de/
 The application can be run out-of-the-box with Docker: `docker-compose up`
+
+### Contributors:
+Priyam Srivastava, Jakob Koehler, James Carney, Rajvardhan Oak
